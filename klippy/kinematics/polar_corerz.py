@@ -115,4 +115,4 @@ class PolarCoreRZKinematics:
         }
 
 def load_kinematics(toolhead, config):
-    return PolarCoreXZKinematics(toolhead, config)
+    return PolarCoreRZKinematics(toolhead, config)
