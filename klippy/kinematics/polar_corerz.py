@@ -69,7 +69,7 @@ class PolarCoreRZKinematics:
         if axis == 0:
             homepos[1] = 0.
         forcepos = list(homepos)
-         if hi.positive_dir:
+        if hi.positive_dir:
             forcepos[axis] -= 1.5 * (hi.position_endstop - position_min)
         else:
             forcepos[axis] += 1.5 * (position_max - hi.position_endstop)
