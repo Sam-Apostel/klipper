@@ -59,10 +59,14 @@ polar_corerz_stepper_alloc(char type)
     if (type == 'a'){
         sk->calc_position_cb = polar_stepper_angle_calc_position;
         sk->post_cb = polar_stepper_angle_post_fixup;
-    } else if (type == '+')
+        sk->active_flags = AF_X | AF_Y;
+    } else if (type == '+'){
         sk->calc_position_cb = polar_corerz_stepper_plus_calc_position;
-    else if (type == '-')
+        sk->active_flags = AF_X | AF_Y | AF_Z;
+    } else if (type == '-'){
         sk->calc_position_cb = polar_corerz_stepper_minus_calc_position;
-    sk->active_flags = AF_X | AF_Y | AF_Z;
+        sk->active_flags = AF_X | AF_Y | AF_Z;
+    }
+
     return sk;
 }

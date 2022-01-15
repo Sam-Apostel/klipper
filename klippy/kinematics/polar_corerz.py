@@ -99,11 +99,11 @@ class PolarCoreRZKinematics:
         r = xpos**2 + ypos**2
         if r > self.limit_r:
             if self.limit_r < 0.:
-                raise move.move_error("Must home axis first")
+                raise move.move_error("Must home xy/r axis first")
             raise move.move_error()
         if zpos < self.limit_z[0] or zpos > self.limit_z[1]:
             if self.limit_z[0] > self.limit_z[1]:
-                raise move.move_error("Must home axis first")
+                raise move.move_error("Must home z axis first")
             raise move.move_error()
     def get_status(self, eventtime):
         r_home = "xy" if self.limit_r >= 0. else ""
