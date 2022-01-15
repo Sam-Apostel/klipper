@@ -60,9 +60,9 @@ polar_corerz_stepper_alloc(char type)
         sk->calc_position_cb = polar_stepper_angle_calc_position;
         sk->post_cb = polar_stepper_angle_post_fixup;
     } else if (type == '+')
-        sk->calc_position_cb = corerz_stepper_plus_calc_position;
+        sk->calc_position_cb = polar_corerz_stepper_plus_calc_position;
     else if (type == '-')
-        sk->calc_position_cb = corerz_stepper_minus_calc_position;
+        sk->calc_position_cb = polar_corerz_stepper_minus_calc_position;
     sk->active_flags = AF_X | AF_Y | AF_Z;
     return sk;
 }
