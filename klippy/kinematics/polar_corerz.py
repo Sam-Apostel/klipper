@@ -95,7 +95,7 @@ class PolarCoreRZKinematics:
         self.limit_z = (1.0, -1.0)
         self.limit_r = -1.
     def check_move(self, move):
-        xpos, ypos, zpos = move.end_pos
+        xpos, ypos, zpos = move.end_pos[:3]
         r = xpos**2 + ypos**2
         if r > self.limit_r:
             if self.limit_r < 0.:
